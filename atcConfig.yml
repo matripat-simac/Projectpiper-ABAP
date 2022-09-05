@@ -1,5 +1,5 @@
 checkvariant: ABAP_CLOUD_DEVELOPMENT_DEFAULT
 atcobjects:
   softwarecomponent:
-    - name: "/NAMESPC/COMPONENTA"
-    - name: "/NAMESPC/COMPONENTB"
+    - name: "/SIMACDEV/COMPONENTA"
+    - name: "/SIMACDEV/COMPONENTB"
