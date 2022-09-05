@@ -4,20 +4,20 @@ general:
   #Parameter 'addonDescriptorFileName': Path to YAML config file for addon descriptor
   addonDescriptorFileName: 'addon.yml'
   #Parameter 'cfApiEndpoint': Cloud Foundry API Endpoint specific to region of Cloud Foundry Environment to be used
-  cfApiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
+  cfApiEndpoint: 'https://api.cf.us10-001.hana.ondemand.com'
   #Parameter 'cfOrg': Cloud Foundry Organization used to create assembly system
-  cfOrg: 'myOrgBld'
+  cfOrg: '30c12a2ctrial_mytrial-mrt'
   #Parameter 'cfSpace': Cloud Foundry Space used to create assembly system
-  cfSpace: 'mySpaceBld'
+  cfSpace: 'DEV'
   #Parameter 'cfCredentialsId': Credentials stored in Jenkins for Space Developer user to authenticate to the Cloud Foundry API
-  cfCredentialsId: 'cfAuthentification'
+  cfCredentialsId: 'TechUserAAKaaS'
   #Parameter 'cfServiceInstance': Service Instance Name of assembly system
   cfServiceInstance: 'bld_system'
 stages:
   #Stage 'Prepare System': In this stage, the SAP BTP, ABAP environment system for add-on assembly is created.
   Prepare System:
     #Parameter 'abapSystemAdminEmail': E-Mail address for the initial administrator of the assembly system
-    abapSystemAdminEmail: 'user@example.com'
+    abapSystemAdminEmail: 'manas.tripathy@simac.com'
     #Parameter 'abapSystemID': Three character name of the assembly system - maps to 'sapSystemName'
     abapSystemID: 'BLD'
   #Stage 'Clone Repositories': This stage creates pulls/clones the specified software components (repositories) to the assembly system
@@ -37,13 +37,13 @@ stages:
   #Stage 'Integration Tests': creates an SAP BTP, ABAP environment (Steampunk) system and installs the add-on product, that was built in the Build stage
   Integration Tests:
     #Parameter 'cfOrg': Cloud Foundry Organization used to create installation test system
-    cfOrg: 'myOrgAti'
+    cfOrg: '30c12a2ctrial_mytrial-mrt'
     #Parameter 'cfSpace': Cloud Foundry Space used to create installation test system
-    cfSpace: 'mySpaceAti'
+    cfSpace: 'DEV'
     #Parameter 'cfServiceInstance': Service Instance Name of installation test system
     cfServiceInstance: 'ati_system'
     #Parameter 'abapSystemAdminEmail': E-Mail address for the initial administrator of the installation test system
-    abapSystemAdminEmail: 'user@example.com'
+    abapSystemAdminEmail: 'manas.tripathy@simac.com'
     #Parameter 'abapSystemID': Three character name of the installation test system - maps to 'sapSystemName'
     abapSystemID: 'ATI'
   #Stage 'Publish': This stage publishes an add-on for the SAP BTP, ABAP environment
